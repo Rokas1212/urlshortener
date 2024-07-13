@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Shorten Url";
+}
+
+@model UrlShortener.Models.UrlMapping
+
+<div class="text-center">
+    <h1 class="display-4">URL Shortener</h1>
+    <form asp-action="ShortenUrl" method="post">
+        <label for="originalUrl">Enter <strong>URL</strong> to shorten and <strong>Expiration</strong> date:</label>
+        <div class="input-group mb-2">
+            <input class="form-control" asp-for="OriginalUrl" placeholder="https://www.long-url-example.long" />
+            <input class="form-control col-auto" asp-for="ExpiresOn" type="date" placeholder="Select expiration date" />
+            <button class="btn btn-outline-secondary" type="submit">Shorten</button>
+        </div>
+    </form>
+
+    @if (Model?.ShortenedKey != null)
+    {
+        <div class="alert alert-dark">
+            <p><strong>Original URL: </strong>@Model.OriginalUrl</p>
+            <p><strong>Short URL: </strong><a href="/r/@Model.ShortenedKey">localhost:7070/r/@Model.ShortenedKey</a></p>
+            <p><strong>URL Expiration Date: @Model.ExpiresOn.ToString("MM-dd-yyyy")</strong></p>
+            <img src="@ViewBag.QrCodeImage" alt="QR Code" width="250" height="250"/>
+        </div>
+    }
+</div>
