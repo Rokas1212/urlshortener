@@ -1,4 +1,9 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+@{
     ViewData["Title"] = "Shorten Url";
 }
 
@@ -9,9 +14,16 @@
     <form asp-action="ShortenUrl" method="post">
         <label for="originalUrl">Enter <strong>URL</strong> to shorten and <strong>Expiration</strong> date:</label>
         <div class="input-group mb-2">
-            <input class="form-control" asp-for="OriginalUrl" placeholder="https://www.long-url-example.long" />
-            <input class="form-control col-auto" asp-for="ExpiresOn" type="date" placeholder="Select expiration date" />
-            <button class="btn btn-outline-secondary" type="submit">Shorten</button>
+            <input class="form-control w-75" asp-for="OriginalUrl" placeholder="https://www.long-url-example.long" />
+            <input class="form-control" asp-for="ExpiresOn" type="date" value="" placeholder="Select expiration date" />
+            @if(SignInManager.IsSignedIn(User))
+            {
+                <button class="btn btn-outline-secondary" type="submit">Shorten</button>
+            }
+            else
+            {
+                <button class="btn btn-outline-secondary" type="button" onclick="location.href='@Url.Action("Register", "Profile")'">Shorten</button>
+            }
         </div>
     </form>
 

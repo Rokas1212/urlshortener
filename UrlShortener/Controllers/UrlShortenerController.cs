@@ -7,7 +7,7 @@ using UrlShortener.Services;
 
 namespace UrlShortener.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Member")]
     public class UrlShortenerController : Controller
     {
 
@@ -20,7 +20,7 @@ namespace UrlShortener.Controllers
             _qrCodeService = qrCodeService;
         }
 
-        [Authorize(Roles = "Admin")]
+        [AllowAnonymous]
         public IActionResult Index(UrlMapping? model)
         {
             if (model?.ShortenedKey != null)
@@ -34,7 +34,7 @@ namespace UrlShortener.Controllers
             return View(model);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin, Member")]
         public IActionResult ShortenUrl(UrlMapping model)
         {
             if (ModelState.IsValid)
@@ -80,6 +80,7 @@ namespace UrlShortener.Controllers
             return key;
         }
 
+        [AllowAnonymous]
         [HttpGet("/r/{key}")]
         public IActionResult RedirectToOriginal(string key)
         {

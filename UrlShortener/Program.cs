@@ -22,12 +22,8 @@ namespace UrlShortener
                 .AddEntityFrameworkStores<AppDbContext>();
 
 
-
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
-
-            builder.Services.AddRazorPages();
 
             // Register QrCodeService
             builder.Services.AddScoped<QrCodeService>();
@@ -47,11 +43,8 @@ namespace UrlShortener
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
-
-
-            app.MapRazorPages();
-
 
             // Default Route
             app.MapControllerRoute(

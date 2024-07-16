@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\views\\urlshortener\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\views\\urlshortener\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\views\\profile\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\views\\profile\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\views\\profile\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\views\\profile\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\views\\urlshortener\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\views\\urlshortener\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\controllers\\urlshortenercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\controllers\\urlshortenercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,6 +37,34 @@
     {
       "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|solutionrelative:urlshortener\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C8C2C6F8-64DA-4601-9673-150AF0E1F877}|UrlShortener\\UrlShortener.csproj|c:\\users\\rokas\\desktop\\projects\\url-shortener-git\\urlshortener\\urlshortener\\models\\urlmapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,11 +82,102 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
+              "Title": "UrlShortenerController.cs",
+              "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Controllers\\UrlShortenerController.cs",
+              "RelativeDocumentMoniker": "UrlShortener\\Controllers\\UrlShortenerController.cs",
+              "ToolTip": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Controllers\\UrlShortenerController.cs",
+              "RelativeToolTip": "UrlShortener\\Controllers\\UrlShortenerController.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAwwFUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T10:27:04.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "UrlShortener\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "UrlShortener\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T10:15:41.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "UrlShortener\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "UrlShortener\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-16T09:09:14.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Views\\Profile\\Login.cshtml",
+              "RelativeDocumentMoniker": "UrlShortener\\Views\\Profile\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Views\\Profile\\Login.cshtml",
+              "RelativeToolTip": "UrlShortener\\Views\\Profile\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-16T08:56:23.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Views\\Profile\\Register.cshtml",
+              "RelativeDocumentMoniker": "UrlShortener\\Views\\Profile\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Views\\Profile\\Register.cshtml",
+              "RelativeToolTip": "UrlShortener\\Views\\Profile\\Register.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-16T08:52:07.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "UrlShortener\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "UrlShortener\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T08:42:23.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "UrlShortener\\ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\ViewModels\\RegisterViewModel.cs",
+              "RelativeToolTip": "UrlShortener\\ViewModels\\RegisterViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T08:38:31.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "UrlShortener\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
@@ -71,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
               "Title": "Register.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
               "RelativeDocumentMoniker": "UrlShortener\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
@@ -84,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 14,
               "Title": "AppUser.cs",
               "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Models\\AppUser.cs",
               "RelativeDocumentMoniker": "UrlShortener\\Models\\AppUser.cs",
@@ -92,12 +211,11 @@
               "RelativeToolTip": "UrlShortener\\Models\\AppUser.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-15T21:47:16.08Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-15T21:47:16.08Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "UrlShortener\\Views\\Home\\Index.cshtml",
@@ -116,20 +234,20 @@
               "RelativeDocumentMoniker": "UrlShortener\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "UrlShortener\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACkAAAB9AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-15T21:37:58.796Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Views\\UrlShortener\\Index.cshtml",
               "RelativeDocumentMoniker": "UrlShortener\\Views\\UrlShortener\\Index.cshtml",
               "ToolTip": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Views\\UrlShortener\\Index.cshtml",
               "RelativeToolTip": "UrlShortener\\Views\\UrlShortener\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAmAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-15T21:21:59.666Z",
               "EditorCaption": ""
@@ -142,14 +260,14 @@
               "RelativeDocumentMoniker": "UrlShortener\\Program.cs",
               "ToolTip": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Program.cs",
               "RelativeToolTip": "UrlShortener\\Program.cs",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAIwIYAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-15T21:27:23.418Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Views\\Profile\\Index.cshtml",
               "RelativeDocumentMoniker": "UrlShortener\\Views\\Profile\\Index.cshtml",
@@ -157,8 +275,7 @@
               "RelativeToolTip": "UrlShortener\\Views\\Profile\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-15T21:21:52.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-15T21:21:52.528Z"
             },
             {
               "$type": "Document",
@@ -168,14 +285,14 @@
               "RelativeDocumentMoniker": "UrlShortener\\Controllers\\ProfileController.cs",
               "ToolTip": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Controllers\\ProfileController.cs",
               "RelativeToolTip": "UrlShortener\\Controllers\\ProfileController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAABSAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowDQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-15T21:14:23.369Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "UrlMapping.cs",
               "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Models\\UrlMapping.cs",
               "RelativeDocumentMoniker": "UrlShortener\\Models\\UrlMapping.cs",
@@ -183,12 +300,11 @@
               "RelativeToolTip": "UrlShortener\\Models\\UrlMapping.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-15T21:07:32.522Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-15T21:07:32.522Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Rokas\\Desktop\\Projects\\URL-Shortener-git\\urlshortener\\UrlShortener\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "UrlShortener\\Data\\AppDbContext.cs",
@@ -196,8 +312,7 @@
               "RelativeToolTip": "UrlShortener\\Data\\AppDbContext.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAQwBQAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-15T21:07:27.412Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-15T21:07:27.412Z"
             }
           ]
         }
