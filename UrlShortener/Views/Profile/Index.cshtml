@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Shorten Url";
+}
+
+@model UrlShortener.Models.AppUser
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Original Url</th>
+            <th scope="col">Short Key</th>
+            <th scope="col">Expiration Date</th>
+            <th scope="col">QR</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            @foreach (var url in Model.Urls)
+            {
+                <tr>
+                    <td>@url.OriginalUrl</td>
+                    <td>@url.ShortenedKey</td>
+                    <td>@url.ExpiresOn</td>
+                    <td>"lol"</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

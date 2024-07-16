@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using UrlShortener.Data;
 using UrlShortener.Models;
 using UrlShortener.Services;
 
 namespace UrlShortener.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class UrlShortenerController : Controller
     {
 
@@ -16,6 +19,8 @@ namespace UrlShortener.Controllers
             _context = context;
             _qrCodeService = qrCodeService;
         }
+
+        [Authorize(Roles = "Admin")]
         public IActionResult Index(UrlMapping? model)
         {
             if (model?.ShortenedKey != null)
@@ -28,6 +33,8 @@ namespace UrlShortener.Controllers
             }
             return View(model);
         }
+
+        [Authorize(Roles = "Admin")]
         public IActionResult ShortenUrl(UrlMapping model)
         {
             if (ModelState.IsValid)
@@ -37,7 +44,8 @@ namespace UrlShortener.Controllers
                 model.ShortenedKey = shortenedKey;
                 model.CreatedOn = DateTime.Now.ToUniversalTime();
                 model.ExpiresOn = model.ExpiresOn.ToUniversalTime();
-
+                model.UserId = GetCurrentUserId();
+                    
                 GenerateQrCode(model);
 
                 _context.Urls.Add(model);
@@ -46,7 +54,7 @@ namespace UrlShortener.Controllers
 
             return RedirectToAction("Index", model);
         }
-
+        
         private void GenerateQrCode(UrlMapping urlModel)
         {
             if (ModelState.IsValid)
@@ -84,5 +92,7 @@ namespace UrlShortener.Controllers
             return NotFound();
         }
 
+
+        private string GetCurrentUserId() => User.FindFirstValue(ClaimTypes.NameIdentifier);
     }
 }

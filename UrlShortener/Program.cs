@@ -2,6 +2,7 @@ using UrlShortener.Data;
 using Microsoft.EntityFrameworkCore;
 using UrlShortener.Services;
 using Microsoft.AspNetCore.Identity;
+using UrlShortener.Models;
 
 
 namespace UrlShortener
@@ -16,7 +17,7 @@ namespace UrlShortener
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services
-                .AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
 
@@ -48,10 +49,9 @@ namespace UrlShortener
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => 
-            {
-                endpoints.MapRazorPages();
-            });
+
+            app.MapRazorPages();
+
 
             // Default Route
             app.MapControllerRoute(
@@ -61,14 +61,18 @@ namespace UrlShortener
             // Route for URLShortenerController
             app.MapControllerRoute(
                 name: "urlshortener",
-                pattern:"{controller=UrlShortener}/{action=Index}/{id?}");
+                pattern: "{controller=UrlShortener}/{action=Index}/{id?}");
+
+            // Route for User Profile
+            app.MapControllerRoute(
+                name: "profile",
+                pattern: "{controller=Profile}/{action=Index}/{id?}");
 
             // Route for handling shortened URLs
             app.MapControllerRoute(
                 name: "redirect",
                 pattern: "/r/{key}",
                 defaults: new { controller = "URLShortener", action = "RedirectToOriginal" });
-
 
 
             //Seeding roles
@@ -93,7 +97,7 @@ namespace UrlShortener
 
             using (var scope = app.Services.CreateScope())
             {
-                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+                var userManager = scope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
 
                 var admin = "admin@admin.com";
                 var user = "user@user.com";
@@ -102,7 +106,7 @@ namespace UrlShortener
                 //Seed admin account
                 if (await userManager.FindByEmailAsync(admin) == null)
                 {
-                    var newAdmin = new IdentityUser();
+                    var newAdmin = new AppUser();
                     newAdmin.UserName = admin;
                     newAdmin.Email = admin;
 
@@ -114,7 +118,7 @@ namespace UrlShortener
                 //Seed user account
                 if (await userManager.FindByEmailAsync(user) == null)
                 {
-                    var newUser = new IdentityUser();
+                    var newUser = new AppUser();
                     newUser.UserName = user;
                     newUser.Email = user;
 

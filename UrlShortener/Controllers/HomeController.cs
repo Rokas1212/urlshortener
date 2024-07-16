@@ -5,7 +5,6 @@ using UrlShortener.Models;
 
 namespace UrlShortener.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

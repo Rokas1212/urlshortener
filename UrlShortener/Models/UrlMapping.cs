@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -13,6 +14,8 @@ namespace UrlShortener.Models
         public string? OriginalUrl { get; set; }
 
         public string? ShortenedKey { get; set; }
+
+        public string? UserId { get; set; }
         
         [DataType(DataType.Date)]
         public DateTime CreatedOn { get; set; }
@@ -23,5 +26,8 @@ namespace UrlShortener.Models
 
         [ForeignKey("ShortenedKey")]
         public virtual QrCode? QrCode { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual AppUser? User { get; set; }
     }
 }

@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -25,6 +30,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="urlshortener" asp-action="Index">Shorten</a>
                         </li>
+                        @if (User.IsInRole("Member") || User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Profile" asp-action="Index">Profile</a>
+                            </li>
+                        }
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Identity" asp-action="Account/Login">Login</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
