@@ -1,29 +1,94 @@
-﻿@{
+﻿@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+
+@{
     ViewData["Title"] = "Shorten Url";
 }
 
 @model UrlShortener.Models.AppUser
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Original Url</th>
-            <th scope="col">Short Key</th>
-            <th scope="col">Expiration Date</th>
-            <th scope="col">QR</th>
-        </tr>
-    </thead>
-    <tbody>
-        @{
-            @foreach (var url in Model.Urls)
-            {
-                <tr>
-                    <td>@url.OriginalUrl</td>
-                    <td>@url.ShortenedKey</td>
-                    <td>@url.ExpiresOn</td>
-                    <td>"lol"</td>
-                </tr>
+<div class="mb-2">
+    <form asp-area="" asp-controller="Profile" asp-action="Logout" method="post" class="form-inline">
+        <button type="submit" class="btn btn-dark">Logout</button>
+    </form>
+</div>
+<div>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Original Url</th>
+                <th scope="col">Short Key</th>
+                <th scope="col">Expiration Date</th>
+                <th scope="col">QR</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                @foreach (var url in Model.Urls)
+                {
+                    <tr>
+                        <td class="align-middle">
+                            <span id="view-url-@url.Id">@url.OriginalUrl</span>
+                            <div id="edit-url-@url.Id" style="display: none;">
+                                <input type="text" id="edit-url-input-@url.Id" class="form-control" value="@url.OriginalUrl" />
+                                <button class="btn btn-success mt-2" onclick="saveEdit('@url.Id')">Save</button>
+                                <button class="btn btn-secondary mt-2" onclick="cancelEdit('@url.Id')">Cancel</button>
+                            </div>
+                        </td>
+                        <td class="align-middle">@url.ShortenedKey</td>
+                        <td class="align-middle">@url.ExpiresOn</td>
+                        <td><a asp-action="" asp-route-id="@url.Id">View</a></td>
+                        <td><button class="btn btn-dark" onclick="enableEdit('@url.Id')">Edit</button></td>
+                    </tr>
+                }
             }
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+    function enableEdit(id) {
+        document.getElementById('view-url-' + id).style.display = 'none';
+        document.getElementById('edit-url-' + id).style.display = 'block';
+    }
+
+    function cancelEdit(id) {
+        document.getElementById('view-url-' + id).style.display = 'block';
+        document.getElementById('edit-url-' + id).style.display = 'none';
+    }
+
+    async function saveEdit(id) {
+        var newUrl = document.getElementById('edit-url-input-' + id).value;
+
+        // Get the antiforgery token
+        const token = '@Antiforgery.GetAndStoreTokens(HttpContextAccessor.HttpContext).RequestToken';
+
+        // Send AJAX request to the server to save the new URL
+        const response = await fetch('/UrlShortener/EditUrl', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'RequestVerificationToken': token
+            },
+            body: JSON.stringify({
+                id: id,
+                newUrl: newUrl
+            })
+        });
+
+        console.log(response);
+
+        if (response.ok) {
+            // Update the view
+            document.getElementById('url-value-' + id).innerText = newUrl;
+            cancelEdit(id);
+        } else {
+            alert("Failed to save the new URL.");
         }
-    </tbody>
-</table>
+    }
+</script>
+
+

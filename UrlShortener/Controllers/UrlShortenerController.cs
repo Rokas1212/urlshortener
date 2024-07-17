@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using UrlShortener.Data;
 using UrlShortener.Models;
 using UrlShortener.Services;
+using UrlShortener.ViewModels;
 
 namespace UrlShortener.Controllers
 {
@@ -13,11 +15,13 @@ namespace UrlShortener.Controllers
 
         private readonly AppDbContext _context;
         private readonly QrCodeService _qrCodeService;
+        private readonly UserManager<AppUser> _userManager;
 
-        public UrlShortenerController(AppDbContext context, QrCodeService qrCodeService) 
+        public UrlShortenerController(AppDbContext context, QrCodeService qrCodeService, UserManager<AppUser> userManager)
         {
             _context = context;
             _qrCodeService = qrCodeService;
+            _userManager = userManager;
         }
 
         [AllowAnonymous]
@@ -54,7 +58,35 @@ namespace UrlShortener.Controllers
 
             return RedirectToAction("Index", model);
         }
-        
+
+
+        [Authorize(Roles = "Admin, Member")]
+        [HttpPost]
+        public async Task<IActionResult> EditUrl([FromBody] EditUrlViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var urlMapping = await _context.Urls.FindAsync(model.Id);
+                if (urlMapping == null)
+                {
+                    return NotFound();
+                }
+
+                var currentUser = await _userManager.GetUserAsync(User);
+                if (urlMapping.UserId != GetCurrentUserId() && (await _userManager.IsInRoleAsync(currentUser!, "Admin")))
+                {
+                    return Forbid();
+                }
+
+                urlMapping.OriginalUrl = model.NewUrl;
+                await _context.SaveChangesAsync();
+
+                return Ok();
+            }
+
+            return BadRequest();
+        }
+
         private void GenerateQrCode(UrlMapping urlModel)
         {
             if (ModelState.IsValid)
