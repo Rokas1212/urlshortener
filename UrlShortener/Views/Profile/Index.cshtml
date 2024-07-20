@@ -62,6 +62,8 @@
 
     async function saveEdit(id) {
         var newUrl = document.getElementById('edit-url-input-' + id).value;
+        console.log(id);
+        console.log(document.getElementById('edit-url-input-' + id).value);
 
         // Get the antiforgery token
         const token = '@Antiforgery.GetAndStoreTokens(HttpContextAccessor.HttpContext).RequestToken';
@@ -83,7 +85,7 @@
 
         if (response.ok) {
             // Update the view
-            document.getElementById('url-value-' + id).innerText = newUrl;
+            document.getElementById('view-url-' + id).innerText = newUrl;
             cancelEdit(id);
         } else {
             alert("Failed to save the new URL.");

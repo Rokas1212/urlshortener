@@ -9,7 +9,7 @@ using UrlShortener.ViewModels;
 
 namespace UrlShortener.Controllers
 {
-    [Authorize(Roles = "Admin, Member")]
+    [Authorize(Roles = "Admin, User")]
     public class UrlShortenerController : Controller
     {
 
@@ -38,7 +38,7 @@ namespace UrlShortener.Controllers
             return View(model);
         }
 
-        [Authorize(Roles = "Admin, Member")]
+        [Authorize(Roles = "Admin, User")]
         public IActionResult ShortenUrl(UrlMapping model)
         {
             if (ModelState.IsValid)
@@ -60,7 +60,7 @@ namespace UrlShortener.Controllers
         }
 
 
-        [Authorize(Roles = "Admin, Member")]
+        [Authorize(Roles = "Admin, User")]
         [HttpPost]
         public async Task<IActionResult> EditUrl([FromBody] EditUrlViewModel model)
         {
