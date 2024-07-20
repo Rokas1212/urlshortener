@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using UrlShortener.Data;
 using UrlShortener.Models;
 using UrlShortener.ViewModels;
 
@@ -11,11 +12,13 @@ namespace UrlShortener.Controllers
 
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly AppDbContext _context;
 
-        public ProfileController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public ProfileController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, AppDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
 
         public async Task<IActionResult> Index()
@@ -93,5 +96,17 @@ namespace UrlShortener.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpGet]
+        public async Task<string> GetQrCode(string shortenedKey)
+        {
+            var qrCode = await _context.QrCodes.FirstOrDefaultAsync(q => q.ShortenedKey == shortenedKey);
+
+            if (qrCode == null)
+                return string.Empty;
+
+            return qrCode.Base64QrCode!;
+        }
+
     }
 }

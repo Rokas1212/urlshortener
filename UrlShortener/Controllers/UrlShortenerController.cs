@@ -94,7 +94,7 @@ namespace UrlShortener.Controllers
                 var qrModel = new QrCode
                 {
                     ShortenedKey = urlModel.ShortenedKey,
-                    Base64QrCode = _qrCodeService.GenerateQrCode($"https://localhost:7070/r/{urlModel.ShortenedKey}")
+                    Base64QrCode = _qrCodeService.GenerateQrCode($"{GetBaseUrl()}/r/{urlModel.ShortenedKey}")
                 };
 
                 _context.QrCodes.Add(qrModel);
@@ -102,6 +102,16 @@ namespace UrlShortener.Controllers
             }
 
         }
+
+        private string GetBaseUrl()
+        {
+            var request = HttpContext.Request;
+            var baseUrl = $"{request.Scheme}://{request.Host}";
+
+            return baseUrl;
+        }
+
+
         private string GenerateShortenedKey()
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

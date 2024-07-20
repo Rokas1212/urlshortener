@@ -1,7 +1,6 @@
 ﻿@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 
-
 @{
     ViewData["Title"] = "Shorten Url";
 }
@@ -39,7 +38,7 @@
                         </td>
                         <td class="align-middle">@url.ShortenedKey</td>
                         <td class="align-middle">@url.ExpiresOn</td>
-                        <td><a asp-action="" asp-route-id="@url.Id">View</a></td>
+                        <td><button class="btn btn-dark" onclick="displayQrCode('@url.ShortenedKey')">View</button></td>
                         <td><button class="btn btn-dark" onclick="enableEdit('@url.Id')">Edit</button></td>
                     </tr>
                 }
@@ -48,49 +47,12 @@
     </table>
 </div>
 
+<div id="qrModal" class="modal">
+    <div class="modal-content">
+        <button class="close-button btn btn-dark" onclick="closeModal()">Close</button>
+        <div id="qrCodeContainer"></div>
+    </div>
+</div>
 
-<script>
-    function enableEdit(id) {
-        document.getElementById('view-url-' + id).style.display = 'none';
-        document.getElementById('edit-url-' + id).style.display = 'block';
-    }
-
-    function cancelEdit(id) {
-        document.getElementById('view-url-' + id).style.display = 'block';
-        document.getElementById('edit-url-' + id).style.display = 'none';
-    }
-
-    async function saveEdit(id) {
-        var newUrl = document.getElementById('edit-url-input-' + id).value;
-        console.log(id);
-        console.log(document.getElementById('edit-url-input-' + id).value);
-
-        // Get the antiforgery token
-        const token = '@Antiforgery.GetAndStoreTokens(HttpContextAccessor.HttpContext).RequestToken';
-
-        // Send AJAX request to the server to save the new URL
-        const response = await fetch('/UrlShortener/EditUrl', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'RequestVerificationToken': token
-            },
-            body: JSON.stringify({
-                id: id,
-                newUrl: newUrl
-            })
-        });
-
-        console.log(response);
-
-        if (response.ok) {
-            // Update the view
-            document.getElementById('view-url-' + id).innerText = newUrl;
-            cancelEdit(id);
-        } else {
-            alert("Failed to save the new URL.");
-        }
-    }
-</script>
-
+<script src="~/js/profile.js"></script>
 
