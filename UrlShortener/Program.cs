@@ -56,10 +56,17 @@ namespace UrlShortener
                 name: "urlshortener",
                 pattern: "{controller=UrlShortener}/{action=Index}/{id?}");
 
+            // Route for Auth
+            app.MapControllerRoute(
+                name: "auth",
+                pattern: "{controller=Auth}/{action=Index}/{id?}"
+                );
+
             // Route for User Profile
             app.MapControllerRoute(
                 name: "profile",
                 pattern: "{controller=Profile}/{action=Index}/{id?}");
+
 
             // Route for handling shortened URLs
             app.MapControllerRoute(
