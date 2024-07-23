@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using UrlShortener.Data;
 using UrlShortener.Models;
 
 namespace UrlShortener.Controllers
@@ -10,12 +9,10 @@ namespace UrlShortener.Controllers
     {
 
         private readonly UserManager<AppUser> _userManager;
-        private readonly AppDbContext _context;
 
-        public ProfileController(UserManager<AppUser> userManager, AppDbContext context)
+        public ProfileController(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
-            _context = context;
         }
 
         public async Task<IActionResult> Index()
@@ -32,17 +29,5 @@ namespace UrlShortener.Controllers
 
             return View(user);
         }
-
-        [HttpGet]
-        public async Task<string> GetQrCode(string shortenedKey)
-        {
-            var qrCode = await _context.QrCodes.FirstOrDefaultAsync(q => q.ShortenedKey == shortenedKey);
-
-            if (qrCode == null)
-                return string.Empty;
-
-            return qrCode.Base64QrCode!;
-        }
-
     }
 }

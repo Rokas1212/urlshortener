@@ -39,7 +39,7 @@ async function saveEdit(id) {
 async function getQrCode(shortenedKey) {
 
     // Send request to get the QR code
-    const response = await fetch(`/Profile/GetQrCode?shortenedKey=${encodeURIComponent(shortenedKey)}`, {
+    const response = await fetch(`/api/qrcode/GetQrCode?shortenedKey=${encodeURIComponent(shortenedKey)}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -48,8 +48,8 @@ async function getQrCode(shortenedKey) {
 
 
     if (response.ok) {
-        const qrCodeBase64 = await response.text();
-        return qrCodeBase64;
+        const data = await response.text();
+        return data;
     } else {
         alert("Failed to get the QR code");
     }
