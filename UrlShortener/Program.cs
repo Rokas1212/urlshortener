@@ -14,8 +14,17 @@ namespace UrlShortener
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
+            var baseConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            var dbPassword = builder.Configuration["DbPassword"];
+
+            var connectionString = $"{baseConnectionString};Password={dbPassword}";
+
+            Console.WriteLine(connectionString);
+
             builder.Services.AddDbContext<AppDbContext>(options =>
-                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(connectionString));
 
             builder.Services
                 .AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
@@ -111,6 +120,7 @@ namespace UrlShortener
                     var newAdmin = new AppUser();
                     newAdmin.UserName = admin;
                     newAdmin.Email = admin;
+                    newAdmin.EmailConfirmed = true;
 
                     await userManager.CreateAsync(newAdmin, password);
 
@@ -123,6 +133,7 @@ namespace UrlShortener
                     var newUser = new AppUser();
                     newUser.UserName = user;
                     newUser.Email = user;
+                    newUser.EmailConfirmed = true;
 
                     await userManager.CreateAsync(newUser, password);
 
