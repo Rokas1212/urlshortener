@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using UrlShortener.Services;
 using Microsoft.AspNetCore.Identity;
 using UrlShortener.Models;
+using UrlShortener.Services.ServiceInterfaces;
 
 
 namespace UrlShortener
@@ -17,10 +18,11 @@ namespace UrlShortener
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services
-                .AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
 
+            builder.Services.AddTransient<IEmailSenderService, EmailSenderService>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();

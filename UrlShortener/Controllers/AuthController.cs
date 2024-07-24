@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using UrlShortener.Models;
+using UrlShortener.Services.ServiceInterfaces;
 using UrlShortener.ViewModels;
 
 namespace UrlShortener.Controllers
@@ -9,11 +11,13 @@ namespace UrlShortener.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly IEmailSenderService _emailSender;
 
-        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IEmailSenderService emailSender)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _emailSender = emailSender;
         }
 
         [HttpGet]
@@ -32,10 +36,14 @@ namespace UrlShortener.Controllers
 
                 if (result.Succeeded)
                 {
-                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    var confirmationLink = Url.Action("ConfirmEmail", "Auth", new {userId = user.Id, token }, Request.Scheme);
+
+                    await _emailSender.SendEmailASync(user.Email, "Confirm your email", $"Please confirm your account by <a href=\"{confirmationLink}\">clicking here</a>.");
+
                     await _userManager.AddToRoleAsync(user, "User");
 
-                    return RedirectToAction("Index", "Home");
+                    return View("ConfirmEmailNotification");
                 }
 
                 foreach (var error in result.Errors)
@@ -44,6 +52,34 @@ namespace UrlShortener.Controllers
                 }
             }
             return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
+        {
+            if (userId == null || token == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var result = await _userManager.ConfirmEmailAsync(user, token);
+            if (result.Succeeded)
+            {
+                return View("ConfirmEmail");
+            }
+
+            return View("Error");
+        }
+
+        public IActionResult ConfirmEmailNotification()
+        {
+            return View();
         }
 
         [HttpGet]
@@ -57,6 +93,13 @@ namespace UrlShortener.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                if (user != null && !user.EmailConfirmed)
+                {
+                    // Redirect to email confirmation page
+                    return RedirectToAction("ConfirmEmailNotification", "Auth");
+                }
+
                 var result = await _signInManager.PasswordSignInAsync(model.Email!, model.Password!, model.RememberMe, lockoutOnFailure: false);
 
                 if (result.Succeeded)
