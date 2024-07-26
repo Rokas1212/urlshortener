@@ -49,7 +49,7 @@ namespace UrlShortener.Controllers
                 model.CreatedOn = DateTime.Now.ToUniversalTime();
                 model.ExpiresOn = model.ExpiresOn.ToUniversalTime();
                 model.UserId = GetCurrentUserId();
-                    
+
                 GenerateQrCode(model);
 
                 _context.Urls.Add(model);
@@ -84,6 +84,33 @@ namespace UrlShortener.Controllers
                 return Ok();
             }
 
+            return BadRequest();
+        }
+
+        [Authorize(Roles = "Admin, User")]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteUrl([FromBody] DeleteUrlViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var urlMapping = await _context.Urls.FindAsync(model.Id);
+
+                if (urlMapping == null)
+                {
+                    return NotFound();
+                }
+
+                var currentUser = await _userManager.GetUserAsync(User);
+
+                if (urlMapping.UserId != GetCurrentUserId() && (await _userManager.IsInRoleAsync(currentUser!, "Admin")))
+                {
+                    return Forbid();
+                }
+
+                _context.Urls.Remove(urlMapping);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
             return BadRequest();
         }
 

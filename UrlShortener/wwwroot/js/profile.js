@@ -80,3 +80,22 @@ function openQrCodeWindow(qrCodeBase64) {
         qrWindow.document.close();
     }
 }
+
+async function deleteUrl(id) {
+    if (!confirm("Are you sure?")) return;
+    const urlRow = document.getElementById("url-" + id);
+
+    const response = await fetch('/UrlShortener/DeleteUrl', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            id: id,
+        })
+    });
+
+    if (response.ok) {
+        urlRow.remove();
+    }
+}
