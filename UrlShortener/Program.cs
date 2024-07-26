@@ -113,31 +113,26 @@ namespace UrlShortener
                 var admin = "admin@admin.com";
                 var user = "user@user.com";
                 var password = "Test123!";
+                
+                await SeedUser(admin, password, new List<string> { "Admin", "User" });
+                await SeedUser(user, password, new List<string>{"User"});
 
-                //Seed admin account
-                if (await userManager.FindByEmailAsync(admin) == null)
+                async Task SeedUser(string mail, string password, List<string> roles)
                 {
-                    var newAdmin = new AppUser();
-                    newAdmin.UserName = admin;
-                    newAdmin.Email = admin;
-                    newAdmin.EmailConfirmed = true;
+                    if (await userManager.FindByEmailAsync(mail) == null)
+                    {
+                        var newUser = new AppUser();
+                        newUser.UserName = mail;
+                        newUser.Email = mail;
+                        newUser.EmailConfirmed = true;
 
-                    await userManager.CreateAsync(newAdmin, password);
+                        await userManager.CreateAsync(newUser, password);
 
-                    await userManager.AddToRoleAsync(newAdmin, "Admin");
-                }
-
-                //Seed user account
-                if (await userManager.FindByEmailAsync(user) == null)
-                {
-                    var newUser = new AppUser();
-                    newUser.UserName = user;
-                    newUser.Email = user;
-                    newUser.EmailConfirmed = true;
-
-                    await userManager.CreateAsync(newUser, password);
-
-                    await userManager.AddToRoleAsync(newUser, "User");
+                        foreach (var role in roles)
+                        {
+                            await userManager.AddToRoleAsync(newUser, role);
+                        }
+                    }
                 }
             }
 
